@@ -1,5 +1,7 @@
 BINUS-Locator
 
-How to use:
+How to use: 
+
 -pip install django
+
 -python manage.py runserver

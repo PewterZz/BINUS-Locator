@@ -1,4 +1,4 @@
-BINUS-Locator
+# BINUS-Locator
 
 ## How to Use
 

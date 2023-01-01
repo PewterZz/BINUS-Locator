@@ -7,3 +7,6 @@ def index(request):
 def map(request):
     context = {}
     return render(request, "map.html", context)
+def floyd(request):
+    context = {}
+    return render(request, "floyd.html", context)

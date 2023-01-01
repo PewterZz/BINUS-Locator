@@ -1,6 +1,6 @@
 # BINUS-Locator
 
-## How to Use
+#### How to Use
 
 Install Django:
 ```

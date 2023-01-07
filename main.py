@@ -18,11 +18,13 @@ def initialize(adj, V):
 
     return matrix
 
-V = 26
+V = 56
+
+
 coords = []
 i = 0
 while(i < V):
-    data = pd.read_csv("coords23.csv")
+    data = pd.read_csv("BINUS-Locator\coords23.csv")
     coords.append(Node.Node(int(data['id'][i]), data['loc'][i].split(','), data['type'][i], data['dest'][i].split(','), data['dist'][i].split(','), data['chain'][i].split(',')))
     i += 1
 
@@ -66,7 +68,7 @@ gmapone.marker(lat[0], long[0], color='yellow')
 
 #driver code
 while(True):
-    choice = int(input("What would you like to find ?: \n 1. Restaurant \n 2. Sports and Recreation \n 3. Else \n"))
+    choice = int(input("What would you like to find ?: \n 1. Restaurant \n 2. Sports and Recreation \n 3. University \n 4. Mall \n 5. Else"))
     if(choice == 1):
         for i in coords:
             #checks to see if the current i.id is a restaurant or not
@@ -74,7 +76,6 @@ while(True):
                 tlat = []
                 tlong = []
                 for p in range(len(spa[i.id])):
-                    print(coords[int(spa[i.id][p])].id)
                     tlat.append(float(coords[int(spa[i.id][p])].getlat()))
                     tlong.append(float(coords[int(spa[i.id][p])].getlong()))
 
@@ -88,7 +89,6 @@ while(True):
                 tlat = []
                 tlong = []
                 for p in range(len(spa[i.id])):
-                    print(coords[int(spa[i.id][p])].id)
                     tlat.append(float(coords[int(spa[i.id][p])].getlat()))
                     tlong.append(float(coords[int(spa[i.id][p])].getlong()))
 
@@ -97,7 +97,39 @@ while(True):
                 print(f'Shortest path to Node {i.id} (Recreational) is: {distance[0][i.id]}')
                 gmapone.plot(tlat, tlong, 'cyan', edge_width=8)
                 gmapone.marker(tlat[-1], tlong[-1], color='red', label='Recreational')
+    
+    if (choice == 3):
+        for i in coords:
+            if i.isuniversity():
+                tlat = []
+                tlong = []
+                for p in range(len(spa[i.id])):
+                    tlat.append(float(coords[int(spa[i.id][p])].getlat()))
+                    tlong.append(float(coords[int(spa[i.id][p])].getlong()))
 
+                tlat.append(float(i.getlat()))
+                tlong.append(float(i.getlong()))
+                print(f'Shortest path to Node {i.id} (University) is: {distance[0][i.id]}')
+                gmapone.plot(tlat, tlong, 'cyan', edge_width=8)
+                gmapone.marker(tlat[-1], tlong[-1], color='red', label='University')
+    
+    if (choice == 4):
+        for i in coords:
+            if i.ismall():
+                tlat = []
+                tlong = []
+                for p in range(len(spa[i.id])):
+                    tlat.append(float(coords[int(spa[i.id][p])].getlat()))
+                    tlong.append(float(coords[int(spa[i.id][p])].getlong()))
+
+                tlat.append(float(i.getlat()))
+                tlong.append(float(i.getlong()))
+                print(f'Shortest path to Node {i.id} (Mall) is: {distance[0][i.id]}')
+                gmapone.plot(tlat, tlong, 'cyan', edge_width=8)
+                gmapone.marker(tlat[-1], tlong[-1], color='red', label='Mall')
+    output_path = "BINUS-Locator\\main\\templates"
+    file_name = "restaurant.html"
+    file_path = os.path.join(output_path, file_name)
     print(f"Time taken: {total_time}")
-    gmapone.draw("map.html")
+    gmapone.draw(file_path)
     break

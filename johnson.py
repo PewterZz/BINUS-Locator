@@ -12,7 +12,6 @@ def minDistance(dist, visited):
     return minVertex
 
 def getPath(pred, src, des):
-    print(des)
     if pred[des] == -1:
         return str(des)
     return getPath(pred, src, pred[des]) + ',' + str(des)
@@ -89,6 +88,4 @@ def JohnsonAlgorithm(graph, distance, path, vertices):
     for src in range(len(graph)):
         Dijkstra(graph, modifiedGraph, src, distance, count, path, pred, srcVertex)
         count += 1
-
-    print(distance)
     return srcVertex

@@ -13,6 +13,12 @@ class Node:
 
     def isrecreational(self):
         return self.type == 'recreational'
+    
+    def isuniversity(self):
+        return self.type == "university"
+
+    def ismall(self):
+        return self.type == "mall"
 
     def getdest(self):
         return self.dest

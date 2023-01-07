@@ -21,13 +21,13 @@ def initialize(adj, V):
 
 
 #v needs to be the value of all the data in the csv, which starts from 0 so you will need to change it to the max id - 1
-V = 22
+V = 56
 
 #coords stores all the lat and long values like this [(lat, long), (lat, long), ...]
 coords = []
 i = 0
 while(i < V):
-    data = pd.read_csv("coords23.csv")
+    data = pd.read_csv("BINUS-Locator\coords23.csv")
     #here after we read the data from the csv, we make a node from the class we made so that it can be easily used later on
     coords.append(Node.Node(int(data['id'][i]), data['loc'][i].split(','), data['type'][i], data['dest'][i].split(','), data['dist'][i].split(','), data['chain'][i].split(',')))
     i += 1
@@ -100,7 +100,7 @@ gmapone.marker(lat[0], long[0], color='yellow')
 
 
 while(True):
-    choice = int(input("What would you like to find ?: \n 1. Restaurant \n 2. Sports and Recreation \n 3. Else \n"))
+    choice = int(input("What would you like to find ?: \n 1. Restaurant \n 2. Sports and Recreation \n 3. University \n 4. Mall \n 5.Else"))
     if(choice == 1):
         for i in coords:
             if i.isrestaurant():
@@ -159,6 +159,52 @@ while(True):
                 print(f'Shortest path to Node {i.id} (Recreational) is: {distance[0][i.id]}')
                 gmapone.plot(tlat, tlong, 'cyan', edge_width=8)
                 gmapone.marker(tlat[-1], tlong[-1], color='red', label='Recreational')
+    
+    if (choice == 3):
+        for i in coords:
+            if i.isuniversity():
+                node = i.id
+                path = [node]
+                while pred[0][node] is not None:
+                    node = pred[0][node]
+                    path.append(node)
+                #reversed becaused the pred function starts from the last node
+                path.reverse()
+                #inserts 0 to the 0th index which is where all the paths start from
+                path.insert(0, 0)
+                tlat = []
+                tlong = []
+                for p in range(len(path)):
+                    tlat.append(float(coords[int(path[p])].getlat()))
+                    tlong.append(float(coords[int(path[p])].getlong()))
+
+                #same as above description 
+                print(f'Shortest path to Node {i.id} (University) is: {distance[0][i.id]}')
+                gmapone.plot(tlat, tlong, 'cyan', edge_width=8)
+                gmapone.marker(tlat[-1], tlong[-1], color='red', label='University')
+        
+    if (choice == 4):
+        for i in coords:
+            if i.ismall():
+                node = i.id
+                path = [node]
+                while pred[0][node] is not None:
+                    node = pred[0][node]
+                    path.append(node)
+                #reversed becaused the pred function starts from the last node
+                path.reverse()
+                #inserts 0 to the 0th index which is where all the paths start from
+                path.insert(0, 0)
+                tlat = []
+                tlong = []
+                for p in range(len(path)):
+                    tlat.append(float(coords[int(path[p])].getlat()))
+                    tlong.append(float(coords[int(path[p])].getlong()))
+
+                #same as above description 
+                print(f'Shortest path to Node {i.id} (Mall) is: {distance[0][i.id]}')
+                gmapone.plot(tlat, tlong, 'cyan', edge_width=8)
+                gmapone.marker(tlat[-1], tlong[-1], color='red', label='Mall')
 
     #prints total time
     print(f"Time taken: {total_time}")

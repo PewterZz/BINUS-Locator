@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 {% load static %}
-{% load livereload_tags %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,18 +12,17 @@
     <a href="{% url 'floyd' %}">Floyd-Warshall Algorithm</a>
     <div class="logo">
         <img src="{% static 'logo.png' %}">
-        <h1>Johnson's Algorithm</h1>
+        <h1 class="name">Johnson's Algorithm</h1>
         <p>Binus Locator</p>
     </div>
     <div class="dropdown">
-        <span>Locations!</span>
+        <span>Click here to select a location</span>
         <div class="dropdown-content">
-        <a href="#"> Restoraunts </a>
+        <a href="#"> Restaurants </a>
         <a href="#"> Recreational </a>
         <a href="#"> Stores </a>
         </div>
       </div>
-    <iframe src="{% url 'map' %}" title="Iframe" width="800" height="400"></iframe>
+    <iframe src="{% url 'restaurant' %}" title="Iframe" width="900" height="500"></iframe>
 </body>
 </html>
-{% livereload_script %}

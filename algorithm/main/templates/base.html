@@ -9,20 +9,24 @@
     <title>Binus Locator</title>
 </head>
 <body>
-    <a href="{% url 'floyd' %}">Floyd-Warshall Algorithm</a>
+    <a href="{% url 'floyd' %}">Floyd-Warshall's Algorithm</a>
     <div class="logo">
         <img src="{% static 'logo.png' %}">
         <h1 class="name">Johnson's Algorithm</h1>
         <p>Binus Locator</p>
     </div>
-    <div class="dropdown">
-        <span>Click here to select a location</span>
+    <div class="dropdown-container">
+        <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
         <div class="dropdown-content">
-        <a href="#"> Restaurants </a>
-        <a href="#"> Recreational </a>
-        <a href="#"> Stores </a>
+        <a href="{%url 'index' %}"> Restaurants </a>
+        <a href="{% url 'showrec' %}"> Recreational </a>
+        <a href="{% url 'showuniversity' %}"> University </a>
+        <a href="{% url 'showmall' %}"> Malls </a>
         </div>
-      </div>
-    <iframe src="{% url 'restaurant' %}" title="Iframe" width="900" height="500"></iframe>
+    </div>
+    </div>
+    {% block content %}
+    {% endblock content %}
 </body>
 </html>

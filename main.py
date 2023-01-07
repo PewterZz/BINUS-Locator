@@ -127,8 +127,8 @@ while(True):
                 print(f'Shortest path to Node {i.id} (Mall) is: {distance[0][i.id]}')
                 gmapone.plot(tlat, tlong, 'cyan', edge_width=8)
                 gmapone.marker(tlat[-1], tlong[-1], color='red', label='Mall')
-    output_path = "BINUS-Locator\\main\\templates"
-    file_name = "restaurant.html"
+    output_path = "BINUS-Locator\\algorithm\\main\\templates"
+    file_name = "mall.html"
     file_path = os.path.join(output_path, file_name)
     print(f"Time taken: {total_time}")
     gmapone.draw(file_path)

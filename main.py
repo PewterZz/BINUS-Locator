@@ -18,7 +18,7 @@ def initialize(adj, V):
 
     return matrix
 
-V = 22
+V = 26
 coords = []
 i = 0
 while(i < V):

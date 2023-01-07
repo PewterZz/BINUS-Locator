@@ -12,6 +12,7 @@ def minDistance(dist, visited):
     return minVertex
 
 def getPath(pred, src, des):
+    print(des)
     if pred[des] == -1:
         return str(des)
     return getPath(pred, src, pred[des]) + ',' + str(des)
@@ -42,10 +43,7 @@ def Dijkstra(graph, modifiedGraph, src, distance, index, path, pred, srcVertex):
         distance[index].append(float(dist[vertex]))
         if src == 0:
             srcVertex[vertex].append(getPath(pred, src, vertex))
-
-
     
-
 
 def BellmanFord(edges, graph, num_vertices):
     dist = [MAX_INT] * (num_vertices + 1)
@@ -86,7 +84,7 @@ def JohnsonAlgorithm(graph, distance, path, vertices):
 
     # Here, you will need to call the Dijkstra function for each source vertex
     # and pass an empty dictionary as the `pred` parameter
-    pred = {}
+    pred = defaultdict(lambda: -1)
     srcVertex = [[] for i in range(vertices)]
     for src in range(len(graph)):
         Dijkstra(graph, modifiedGraph, src, distance, count, path, pred, srcVertex)

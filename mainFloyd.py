@@ -19,6 +19,7 @@ def initialize(adj, V):
 
     return matrix
 
+
 #v needs to be the value of all the data in the csv, which starts from 0 so you will need to change it to the max id - 1
 V = 22
 

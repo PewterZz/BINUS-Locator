@@ -4,9 +4,9 @@ Implementation of Johnson and Floyd-Warshall algorithm with the use of Python's 
 ### What does it do?
 Well, it is essentially a BINUS locator! If you are in a jiffy where you are lost or don't quite know the cool fun places to go in the area, well look no further than this application! With its pathfinding, you can find malls, restuarants and recreational places where you can hang out after classes
 
-- [x] #739
-- [ ] https://github.com/octo-org/octo-repo/issues/740
-- [ ] Add delight to the experience when all tasks are complete :tada:
+- [x] Actual Program
+- [ ] Research Paper
+- [ ] Vacation
 
 Install Django:
 ```

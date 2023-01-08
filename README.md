@@ -1,4 +1,7 @@
 # BINUS-Locator
+Implementation of Johnson and Floyd-Warshall algorithm with the use of the GMPLOT library. 
+
+
 
 #### How to Use
 

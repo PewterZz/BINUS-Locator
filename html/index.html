@@ -1,5 +1,30 @@
-{% extends "base.html "%}
-{% load static %}
-{%block content%}
-<iframe src="{% url 'restaurant' %}" title="Iframe" height="600" width="1200"></iframe>
-{% endblock content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Binus Locator</title>
+</head>
+<body>
+    <a href="floydbase.html">Floyd-Warshall's Algorithm</a>
+    <div class="logo">
+        <img src="logo.png">
+        <h1 class="name">Johnson's Algorithm</h1>
+        <p>Binus Locator</p>
+    </div>
+    <div class="dropdown-container">
+        <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+        <a href="index.html"> Restaurants </a>
+        <a href="showrec.html"> Recreational </a>
+        <a href="showuniversity.html"> University </a>
+        <a href="showmall.html"> Malls </a>
+        </div>
+    </div>
+    </div>
+    <iframe src="restaurant.html" title="Iframe" height="600" width="1200"></iframe>
+</body>
+</html>

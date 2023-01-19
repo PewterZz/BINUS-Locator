@@ -1,32 +1,30 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}"> 
+    <link rel="stylesheet" href="style.css"> 
     <title>Binus Locator</title>
 </head>
 <body>
-    <a href="{% url 'index' %}">Johnson's Algorithm</a>
+    <a href="index.html">Johnson's Algorithm</a>
     <div class="logo">
-        <img src="{% static 'logo.png' %}">
-        <h1 class="name">Floyd-Warshall's Algorithm</h1>
+        <img src="logo.png">
+        <h1 class="name">Floyd Warshall's Algorithm</h1>
         <p>Binus Locator</p>
     </div>
     <div class="dropdown-container">
         <div class="dropdown">
-            <button class="dropbtn">Dropdown</button>
+        <button class="dropbtn">Dropdown</button>
         <div class="dropdown-content">
-        <a href="{%url 'index' %}"> Restaurants </a>
-        <a href="{% url 'showrec' %}"> Recreational </a>
-        <a href="{% url 'showuniversity' %}"> University </a>
-        <a href="{% url 'showmall' %}"> Malls </a>
+        <a href="floydbase.html"> Restaurants </a>
+        <a href="showrec copy.html"> Recreational </a>
+        <a href="showuniversity copy.html"> University </a>
+        <a href="showmall copy.html"> Malls </a>
         </div>
-      </div>
     </div>
-      {% block content %}
-      {% endblock content %}
-  </body>
+    </div>
+    <iframe src="restaurant.html" title="Iframe" height="600" width="1200"></iframe>
+</body>
 </html>

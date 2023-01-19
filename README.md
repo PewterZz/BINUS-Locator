@@ -1,4 +1,4 @@
-** BINUS Locator Program **  
+#BINUS Locator Program
 Program made using GMplot and Python.  
 It is used to draw a map containing nodes that lead to a specific place on earth based on the coordinates in coords23.csv, these locations have been handpicked by us and as you can see from the live preview it will try to find the shortest path to all of these places using either Johnson's or the Floyd Warshall algorithm.
 

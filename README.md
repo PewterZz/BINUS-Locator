@@ -6,9 +6,9 @@ Documentation is located in the documentation folder in both pdf and docx forms.
 
 Made by:
 - Peter Nelson Subrata - 2502023562
-- Philipus Adriel Tandra -
-- Christopher Owen -
-- Arvin Yuwono -
+- Philipus Adriel Tandra - 2502031715
+- Christopher Owen - 2502019180
+- Arvin Yuwono - 2502009721
 
 Live Preview : https://pewterzz.github.io/BINUS-Locator/html/index.html
 

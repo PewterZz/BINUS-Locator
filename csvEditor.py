@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QTableWidget, QTableWidgetIte
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QDoubleValidator
 
-
+filePath = None;
 class FloatDelegate(QItemDelegate):
     def __init__(self, parent=None):
         super().__init__()
@@ -60,23 +60,19 @@ class DFEditor(QWidget):
         self.table = TableWidget(DFEditor.df)
         mainLayout.addWidget(self.table)
 
-        button_print = QPushButton('Display DF')
-        button_print.setStyleSheet('font-size: 30px')
-        button_print.clicked.connect(self.print_DF_Values)
-        mainLayout.addWidget(button_print)
 
-        button_export = QPushButton('Export to CSV file')
+
+        button_export = QPushButton('Update CSV File')
         button_export.setStyleSheet('font-size: 30px')
         button_export.clicked.connect(self.export_to_csv)
         mainLayout.addWidget(button_export)
 
         self.setLayout(mainLayout)
 
-    def print_DF_Values(self):
-        print(self.table.df)
+   
 
     def export_to_csv(self):
-        self.table.df.to_csv('Data export.csv', index=False)
+        self.table.df.to_csv(filePath, index=False)
         print('CSV file exported.')
 
 
